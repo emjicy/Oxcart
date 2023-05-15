@@ -1,7 +1,9 @@
 
 ### Oxcart Resources  
-- [Oxcart GitHub Repository](https://github.com/emjicy/Oxcart) 
+- [This Repository](https://github.com/emjicy/Oxcart) 
 
-- [Original Article Outlining Oxcart Methodology](https://mirror.xyz/mel.eth/3VRWumRDw-AWlgwaic0imIFzGBLbxyVs_ubRhb5epn4) 
+- [The Oxcart Method - (mel.eth)March '23](https://mirror.xyz/mel.eth/3VRWumRDw-AWlgwaic0imIFzGBLbxyVs_ubRhb5epn4) 
 
-- [Oxcart: Democratic Theory Explainer Video](https://archive.org/details/metagov-shorttalks-20230405) ([slides](https://docs.google.com/presentation/d/1dCzynSlJzN-sFghPtsUS2oLhQDelTGjh4uYC2l0imfM/edit?usp=sharing))
+- [Math Specification - (BlockScience)May '23](https://hackmd.io/07YIVfyWRLKAAICPMPICZA?view)
+
+- [Oxcart: Democratic Theory Explainer Video - (mel.eth)April '23](https://archive.org/details/metagov-shorttalks-20230405) ([slides](https://docs.google.com/presentation/d/1dCzynSlJzN-sFghPtsUS2oLhQDelTGjh4uYC2l0imfM/edit?usp=sharing))
