@@ -28,11 +28,12 @@ To get started with Oxcart, you can attend the [bi-weekly community call](https:
 
 If you have a methodology that exhibits Oxcart features, feel free to contribute to this repository by creating a pull request. We welcome contributions from anyone interested in developing and improving Oxcart Mechanisms or contributing to Oxcart Applied Research.
 
-Oxcart Applied Research Departments
-Resourcing: Dept. Chair [@feemschats](https://twitter.com/feemschats)
-Research: Dept. Chair [@thisisnotacoin](https://twitter.com/thisisnotacoin)
-Education: Dept. Chair [@pat_zip](https://twitter.com/pat_zip)
-Development: Dept. Chair [mel.eth](https://twitter.com/emjicy)
+## OAR Departments
+
+- Resourcing: Dept. Chair [@feemschats](https://twitter.com/feemschats)
+- Research: Dept. Chair [@thisisnotacoin](https://twitter.com/thisisnotacoin)
+- Education: Dept. Chair [@pat_zip](https://twitter.com/pat_zip)
+- Development: Dept. Chair [mel.eth](https://twitter.com/emjicy)
 
 ## License
 
