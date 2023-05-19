@@ -22,18 +22,11 @@ The original article outlining this methodology can be found [here](https://mirr
 
 ## Getting Started
 
-To get started with Oxcart, you can attend the Oxcart Applied Research [bi-weekly community call](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmkyMnZuMHVjbG9obnExN3Jwb2pmbG40c2RfMjAyMzA1MTZUMTUwMDAwWiBjX2Y2NTcxNDc1YjQ2ZWRiYjE0MzczYWU5OTVhNGIwYzAwMDg3MTA0OTgzMmM0OTkyYTExZDFlOTk2MmJjMGIwZGZAZw&tmsrc=c_f6571475b46edbb14373ae995a4b0c000871049832c4992a11d1e9962bc0b0df%40group.calendar.google.com&scp=ALL) to find out if your passions align with those currently working openly on the challenges of the day. The [Oxcart Community Calendar](https://calendar.google.com/calendar/embed?src=c_f6571475b46edbb14373ae995a4b0c000871049832c4992a11d1e9962bc0b0df%40group.calendar.google.com&ctz=America%2FNew_York) includes Department-level meetings and workshops that may be of interest. The Oxcart Telegram channel can be found [here](https://t.me/+rYEX-fO8TmcxZDMx), be sure to introduce yourself when you drop-in. Feel free to experiment and modify on your own as well and share results in this repository by making a pull-request.
+The Oxcart Telegram channel can be found [here](https://t.me/+rYEX-fO8TmcxZDMx), be sure to introduce yourself when you drop-in. Feel free to experiment and modify on your own as well and share results in this repository by making a pull-request.
 
 ## Contributing
 
 If you have a methodology that exhibits Oxcart features, feel free to contribute to this repository by creating a pull request. We welcome contributions from anyone interested in developing and improving Oxcart Mechanisms or contributing to Oxcart Applied Research.
-
-## OAR Departments
-
-- Resourcing: Dept. Chair [@feemschats](https://twitter.com/feemschats)
-- Research: Dept. Chair [@thisisnotacoin](https://twitter.com/thisisnotacoin)
-- Education: Dept. Chair [@pat_zip](https://twitter.com/pat_zip)
-- Development: Dept. Chair [mel.eth](https://twitter.com/emjicy)
 
 ## License
 
