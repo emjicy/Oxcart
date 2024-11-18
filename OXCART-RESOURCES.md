@@ -1,6 +1,8 @@
 
 ### Oxcart Resources  
-- [This Repository](https://github.com/emjicy/Oxcart) 
+- [This Repository](https://github.com/emjicy/Oxcart)
+
+- [Connect with mel.eth](http://themelv.in/)
 
 - [The Oxcart Method - (mel.eth)March '23](https://mirror.xyz/mel.eth/3VRWumRDw-AWlgwaic0imIFzGBLbxyVs_ubRhb5epn4) 
 
