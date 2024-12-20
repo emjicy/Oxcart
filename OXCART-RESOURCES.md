@@ -12,4 +12,4 @@
 
 - [The Oxcart Method: A Mathematical Basis for Legitimizing Delegated Authority - (mel.eth)November '24](https://github.com/emjicy/Oxcart/blob/main/Oxcart%20Method%20mbLDA%20by%20mel.eth.pdf)
 
-- [Oxcart Legitimacy Analyzer - GPT Education & Analysis Tool (mel.eth)December '24](https://github.com/emjicy/Oxcart/blob/main/OXCART-RESOURCES.md)
+- [Oxcart Legitimacy Analyzer - GPT Education & Analysis Tool (mel.eth)December '24](https://chatgpt.com/g/g-6765efa9e1bc8191b4c99899cd89fed3-oxcart-legitimacy-analyst))
