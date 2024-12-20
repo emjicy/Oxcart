@@ -11,3 +11,5 @@
 - [Oxcart on Arbitrum: Oxcart Delegation Engine - (Thrivecoin, Firestarters, StableLab)June '24 - August '24](https://dashboard.forse.io/oxcart) ([forum](https://forum.arbitrum.foundation/t/announcing-the-oxcart-delegation-engine-on-arbitrum/26429)) ([Oxcart API Docs](https://forseapp.notion.site/Oxcart-API-Documentation-b20a91886d564be1ac5f720f2893bc77)) ([OS smart contract code](https://github.com/stablelab/oxcart-solidity)) ([OS analytics code](https://github.com/stablelab/oxcart-analytics))
 
 - [The Oxcart Method: A Mathematical Basis for Legitimizing Delegated Authority - (mel.eth)November '24](https://github.com/emjicy/Oxcart/blob/main/Oxcart%20Method%20mbLDA%20by%20mel.eth.pdf)
+
+- [Oxcart Legitimacy Analyzer - GPT Education & Analysis Tool (mel.eth)December '24](https://github.com/emjicy/Oxcart/blob/main/OXCART-RESOURCES.md)
