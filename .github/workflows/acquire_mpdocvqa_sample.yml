@@ -1,0 +1,37 @@
+name: Acquire MP-DocVQA representative shards
+
+on:
+  push:
+    branches:
+      - dataset-acquisition-20260923
+    paths:
+      - ".github/workflows/acquire_mpdocvqa_sample.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  mpdocvqa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install HF CLI
+        run: pip install -q -U huggingface_hub
+      - name: Download representative MP-DocVQA shards
+        run: |
+          mkdir -p out/MP-DocVQA
+          hf download lmms-lab/MP-DocVQA --repo-type dataset \
+            --include "data/test-00006-of-00023.parquet" "data/val-00017-of-00029.parquet" "README.md" \
+            --local-dir out/MP-DocVQA
+          cat > out/MP-DocVQA/ACQUISITION_NOTE.txt <<'EOF'
+          Source: lmms-lab/MP-DocVQA
+          Mirror scope: representative image-bearing parquet shards only, not the full 8.57 GB corpus.
+          Files selected: test shard 00006 (~80.8 MB) and validation shard 00017 (~53.3 MB), plus dataset card.
+          Purpose: multi-page document visual QA / page retrieval capability.
+          EOF
+          find out/MP-DocVQA -type f -maxdepth 3 -printf '%p %s bytes\n'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MP_DocVQA_representative_shards
+          path: out/MP-DocVQA
+          compression-level: 0
+          retention-days: 1
