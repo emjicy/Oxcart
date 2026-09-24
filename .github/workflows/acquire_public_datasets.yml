@@ -1,0 +1,121 @@
+name: Acquire public DrawReviews datasets
+
+on:
+  push:
+    branches:
+      - dataset-acquisition-20260923
+    paths:
+      - ".github/workflows/acquire_public_datasets.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  fintabnet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install HF CLI
+        run: pip install -q -U huggingface_hub
+      - name: Download NVIDIA FinTabNet supervision
+        run: |
+          mkdir -p out
+          hf download nvidia/Nemotron-Image-Training-v3 --repo-type dataset \
+            --include "fintabnet/*" \
+            --local-dir out/NVIDIA_Nemotron_FinTabNet
+          cat > out/NVIDIA_Nemotron_FinTabNet/ACQUISITION_NOTE.txt <<'EOF'
+          Source: nvidia/Nemotron-Image-Training-v3/fintabnet
+          License: CC-BY-4.0
+          Contains the 1,269-example supervision JSONL and dataset card.
+          Upstream media are referenced separately by NVIDIA and are not duplicated here.
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NVIDIA_Nemotron_FinTabNet
+          path: out/NVIDIA_Nemotron_FinTabNet
+          retention-days: 1
+
+  thoughtworks_v3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install HF CLI
+        run: pip install -q -U huggingface_hub
+      - name: Download Thoughtworks v3 CUAD benchmark
+        run: |
+          mkdir -p out
+          hf download thoughtworks/document-processing-benchmark --repo-type dataset \
+            --include "data/v3/*" "README.md" \
+            --local-dir out/Thoughtworks_DocBench_v3_CUAD
+          cat > out/Thoughtworks_DocBench_v3_CUAD/ACQUISITION_NOTE.txt <<'EOF'
+          Source: thoughtworks/document-processing-benchmark, config v3
+          Upstream content: CUAD
+          License: CC-BY-4.0 for CUAD rows
+          186 real multi-page contracts, approximately 44 MB, including raw PDF base64 and multiple preprocessing baselines.
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Thoughtworks_DocBench_v3_CUAD
+          path: out/Thoughtworks_DocBench_v3_CUAD
+          retention-days: 1
+
+  cuad_raw:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download CUAD v1
+        run: |
+          mkdir -p out/CUAD_v1
+          curl -L --fail --retry 3 "https://zenodo.org/records/4595826/files/CUAD_v1.zip?download=1" -o out/CUAD_v1/CUAD_v1.zip
+          cat > out/CUAD_v1/ACQUISITION_NOTE.txt <<'EOF'
+          Source: Zenodo record 4595826 / The Atticus Project CUAD
+          License: CC-BY-4.0
+          Raw CUAD v1 archive: commercial contracts, labels, and source files.
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CUAD_v1_raw
+          path: out/CUAD_v1
+          retention-days: 1
+
+  cord_v2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install HF CLI
+        run: pip install -q -U huggingface_hub
+      - name: Download CORD-v2
+        run: |
+          mkdir -p out
+          hf download naver-clova-ix/cord-v2 --repo-type dataset \
+            --include "data/*" "README.md" "dataset_infos.json" \
+            --local-dir out/CORD_v2
+          cat > out/CORD_v2/ACQUISITION_NOTE.txt <<'EOF'
+          Source: naver-clova-ix/cord-v2
+          License: CC-BY-4.0
+          1,000 receipt images with structured ground truth; useful for line items, totals, OCR and structured extraction.
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2
+          path: out/CORD_v2
+          compression-level: 0
+          retention-days: 1
+
+  mbdd2025:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Download public Kaggle archive
+        run: |
+          mkdir -p out/MBDD2025
+          curl -L --fail --retry 3 "https://www.kaggle.com/api/v1/datasets/download/mennamahmoudd/mbdd2025-building-defects" -o out/MBDD2025/MBDD2025.zip
+          cat > out/MBDD2025/ACQUISITION_NOTE.txt <<'EOF'
+          Source: Kaggle mennmahmoudd/mbdd2025-building-defects
+          License: MIT per current public release metadata
+          Building defect imagery and bounding-box annotations.
+          EOF
+          ls -lh out/MBDD2025/MBDD2025.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025
+          path: out/MBDD2025
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: ignore
