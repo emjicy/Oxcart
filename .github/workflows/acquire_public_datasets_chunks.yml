@@ -1,0 +1,793 @@
+name: Acquire public DrawReviews datasets chunked
+
+on:
+  push:
+    branches:
+      - dataset-acquisition-20260923
+    paths:
+      - ".github/workflows/acquire_public_datasets_chunks.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  mbdd_chunks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download and split MBDD2025
+        run: |
+          mkdir -p out/MBDD2025.parts
+          curl -L --fail --retry 3 "https://www.kaggle.com/api/v1/datasets/download/mennamahmoudd/mbdd2025-building-defects" -o out/MBDD2025.zip
+          sha256sum out/MBDD2025.zip | tee out/MBDD2025.parts/SHA256.txt
+          split -b 75M -d -a 2 out/MBDD2025.zip out/MBDD2025.parts/MBDD2025.zip.part-
+          ls -lh out/MBDD2025.parts
+
+      - name: Upload MBDD part 00
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_00
+          path: out/MBDD2025.parts/MBDD2025.zip.part-00
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 01
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_01
+          path: out/MBDD2025.parts/MBDD2025.zip.part-01
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 02
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_02
+          path: out/MBDD2025.parts/MBDD2025.zip.part-02
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 03
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_03
+          path: out/MBDD2025.parts/MBDD2025.zip.part-03
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 04
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_04
+          path: out/MBDD2025.parts/MBDD2025.zip.part-04
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 05
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_05
+          path: out/MBDD2025.parts/MBDD2025.zip.part-05
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 06
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_06
+          path: out/MBDD2025.parts/MBDD2025.zip.part-06
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 07
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_07
+          path: out/MBDD2025.parts/MBDD2025.zip.part-07
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 08
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_08
+          path: out/MBDD2025.parts/MBDD2025.zip.part-08
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 09
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_09
+          path: out/MBDD2025.parts/MBDD2025.zip.part-09
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 10
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_10
+          path: out/MBDD2025.parts/MBDD2025.zip.part-10
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 11
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_11
+          path: out/MBDD2025.parts/MBDD2025.zip.part-11
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 12
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_12
+          path: out/MBDD2025.parts/MBDD2025.zip.part-12
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 13
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_13
+          path: out/MBDD2025.parts/MBDD2025.zip.part-13
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 14
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_14
+          path: out/MBDD2025.parts/MBDD2025.zip.part-14
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 15
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_15
+          path: out/MBDD2025.parts/MBDD2025.zip.part-15
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 16
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_16
+          path: out/MBDD2025.parts/MBDD2025.zip.part-16
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 17
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_17
+          path: out/MBDD2025.parts/MBDD2025.zip.part-17
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 18
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_18
+          path: out/MBDD2025.parts/MBDD2025.zip.part-18
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 19
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_19
+          path: out/MBDD2025.parts/MBDD2025.zip.part-19
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 20
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_20
+          path: out/MBDD2025.parts/MBDD2025.zip.part-20
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 21
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_21
+          path: out/MBDD2025.parts/MBDD2025.zip.part-21
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 22
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_22
+          path: out/MBDD2025.parts/MBDD2025.zip.part-22
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 23
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_23
+          path: out/MBDD2025.parts/MBDD2025.zip.part-23
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 24
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_24
+          path: out/MBDD2025.parts/MBDD2025.zip.part-24
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 25
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_25
+          path: out/MBDD2025.parts/MBDD2025.zip.part-25
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 26
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_26
+          path: out/MBDD2025.parts/MBDD2025.zip.part-26
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 27
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_27
+          path: out/MBDD2025.parts/MBDD2025.zip.part-27
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 28
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_28
+          path: out/MBDD2025.parts/MBDD2025.zip.part-28
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 29
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_29
+          path: out/MBDD2025.parts/MBDD2025.zip.part-29
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 30
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_30
+          path: out/MBDD2025.parts/MBDD2025.zip.part-30
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 31
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_31
+          path: out/MBDD2025.parts/MBDD2025.zip.part-31
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 32
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_32
+          path: out/MBDD2025.parts/MBDD2025.zip.part-32
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 33
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_33
+          path: out/MBDD2025.parts/MBDD2025.zip.part-33
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 34
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_34
+          path: out/MBDD2025.parts/MBDD2025.zip.part-34
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 35
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_35
+          path: out/MBDD2025.parts/MBDD2025.zip.part-35
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 36
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_36
+          path: out/MBDD2025.parts/MBDD2025.zip.part-36
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 37
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_37
+          path: out/MBDD2025.parts/MBDD2025.zip.part-37
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 38
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_38
+          path: out/MBDD2025.parts/MBDD2025.zip.part-38
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD part 39
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_part_39
+          path: out/MBDD2025.parts/MBDD2025.zip.part-39
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload MBDD manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: MBDD2025_manifest
+          path: out/MBDD2025.parts/SHA256.txt
+          retention-days: 1
+
+  cord_chunks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install HF CLI
+        run: pip install -q -U huggingface_hub
+      - name: Download and split CORD-v2
+        run: |
+          mkdir -p out/CORD_v2 out/CORD_v2.parts
+          hf download naver-clova-ix/cord-v2 --repo-type dataset --local-dir out/CORD_v2
+          tar -cf out/CORD_v2.tar -C out/CORD_v2 .
+          sha256sum out/CORD_v2.tar | tee out/CORD_v2.parts/SHA256.txt
+          split -b 75M -d -a 2 out/CORD_v2.tar out/CORD_v2.parts/CORD_v2.tar.part-
+          ls -lh out/CORD_v2.parts
+
+      - name: Upload CORD part 00
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_00
+          path: out/CORD_v2.parts/CORD_v2.tar.part-00
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 01
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_01
+          path: out/CORD_v2.parts/CORD_v2.tar.part-01
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 02
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_02
+          path: out/CORD_v2.parts/CORD_v2.tar.part-02
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 03
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_03
+          path: out/CORD_v2.parts/CORD_v2.tar.part-03
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 04
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_04
+          path: out/CORD_v2.parts/CORD_v2.tar.part-04
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 05
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_05
+          path: out/CORD_v2.parts/CORD_v2.tar.part-05
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 06
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_06
+          path: out/CORD_v2.parts/CORD_v2.tar.part-06
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 07
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_07
+          path: out/CORD_v2.parts/CORD_v2.tar.part-07
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 08
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_08
+          path: out/CORD_v2.parts/CORD_v2.tar.part-08
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 09
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_09
+          path: out/CORD_v2.parts/CORD_v2.tar.part-09
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 10
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_10
+          path: out/CORD_v2.parts/CORD_v2.tar.part-10
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 11
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_11
+          path: out/CORD_v2.parts/CORD_v2.tar.part-11
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 12
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_12
+          path: out/CORD_v2.parts/CORD_v2.tar.part-12
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 13
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_13
+          path: out/CORD_v2.parts/CORD_v2.tar.part-13
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 14
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_14
+          path: out/CORD_v2.parts/CORD_v2.tar.part-14
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 15
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_15
+          path: out/CORD_v2.parts/CORD_v2.tar.part-15
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 16
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_16
+          path: out/CORD_v2.parts/CORD_v2.tar.part-16
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 17
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_17
+          path: out/CORD_v2.parts/CORD_v2.tar.part-17
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 18
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_18
+          path: out/CORD_v2.parts/CORD_v2.tar.part-18
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 19
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_19
+          path: out/CORD_v2.parts/CORD_v2.tar.part-19
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 20
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_20
+          path: out/CORD_v2.parts/CORD_v2.tar.part-20
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 21
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_21
+          path: out/CORD_v2.parts/CORD_v2.tar.part-21
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 22
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_22
+          path: out/CORD_v2.parts/CORD_v2.tar.part-22
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 23
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_23
+          path: out/CORD_v2.parts/CORD_v2.tar.part-23
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 24
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_24
+          path: out/CORD_v2.parts/CORD_v2.tar.part-24
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 25
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_25
+          path: out/CORD_v2.parts/CORD_v2.tar.part-25
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 26
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_26
+          path: out/CORD_v2.parts/CORD_v2.tar.part-26
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 27
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_27
+          path: out/CORD_v2.parts/CORD_v2.tar.part-27
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 28
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_28
+          path: out/CORD_v2.parts/CORD_v2.tar.part-28
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 29
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_29
+          path: out/CORD_v2.parts/CORD_v2.tar.part-29
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 30
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_30
+          path: out/CORD_v2.parts/CORD_v2.tar.part-30
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 31
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_31
+          path: out/CORD_v2.parts/CORD_v2.tar.part-31
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 32
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_32
+          path: out/CORD_v2.parts/CORD_v2.tar.part-32
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 33
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_33
+          path: out/CORD_v2.parts/CORD_v2.tar.part-33
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 34
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_34
+          path: out/CORD_v2.parts/CORD_v2.tar.part-34
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 35
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_35
+          path: out/CORD_v2.parts/CORD_v2.tar.part-35
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 36
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_36
+          path: out/CORD_v2.parts/CORD_v2.tar.part-36
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 37
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_37
+          path: out/CORD_v2.parts/CORD_v2.tar.part-37
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 38
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_38
+          path: out/CORD_v2.parts/CORD_v2.tar.part-38
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD part 39
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_part_39
+          path: out/CORD_v2.parts/CORD_v2.tar.part-39
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+      - name: Upload CORD manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: CORD_v2_manifest
+          path: out/CORD_v2.parts/SHA256.txt
+          retention-days: 1
+
+  thoughtworks_v3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install datasets
+        run: pip install -q -U datasets
+      - name: Materialize Thoughtworks v3
+        run: |
+          mkdir -p out
+          python - <<'PY'
+          from datasets import load_dataset
+          ds = load_dataset("thoughtworks/document-processing-benchmark", "v3")
+          ds.save_to_disk("out/Thoughtworks_DocBench_v3_CUAD")
+          print(ds)
+          PY
+          du -sh out/Thoughtworks_DocBench_v3_CUAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Thoughtworks_DocBench_v3_CUAD_materialized
+          path: out/Thoughtworks_DocBench_v3_CUAD
+          compression-level: 0
+          retention-days: 1
