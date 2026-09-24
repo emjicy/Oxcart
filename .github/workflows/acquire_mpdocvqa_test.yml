@@ -1,0 +1,37 @@
+name: Acquire MP-DocVQA test shard
+
+on:
+  push:
+    branches:
+      - dataset-acquisition-20260923
+    paths:
+      - ".github/workflows/acquire_mpdocvqa_test.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  mpdocvqa_test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install -q -U huggingface_hub
+      - name: Download exact test shard
+        run: |
+          mkdir -p out
+          python - <<'PY'
+          from huggingface_hub import hf_hub_download
+          p=hf_hub_download(
+              repo_id="lmms-lab/MP-DocVQA",
+              repo_type="dataset",
+              filename="data/test-00006-of-00023.parquet",
+              local_dir="out"
+          )
+          print(p)
+          PY
+          ls -lh out/data/test-00006-of-00023.parquet
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MP_DocVQA_test_00006
+          path: out/data/test-00006-of-00023.parquet
+          compression-level: 0
+          retention-days: 1
